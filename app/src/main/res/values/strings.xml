@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CrowdingESTG</string>
+    <string name="send_buttonlbl">Send</string>
+    <string name="search_devices_lbl">Search Devices</string>
+    <string name="enable_bluetooth_lbl">Enable Bluetooth</string>
+    <string name="paired_devices">Paired Devices</string>
+    <string name="available_devices">Available Devices</string>
+    <string name="scan_devices">Scan Devices</string>
+</resources>
