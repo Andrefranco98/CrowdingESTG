@@ -6,4 +6,7 @@
     <string name="paired_devices">Paired Devices</string>
     <string name="available_devices">Available Devices</string>
     <string name="scan_devices">Scan Devices</string>
+    <string name="contribute_with_my_location">Contribute with my location</string>
+    <string name="example_room">Ex: S2.1</string>
+    <string name="search_for_your_desired_location">Search for your desired location</string>
 </resources>

@@ -11,10 +11,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
+import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -36,7 +34,7 @@ class DeviceListActivity : AppCompatActivity() {
 
     }
 
-  fun init(){
+   fun init(){
 
 
        listPairedDevices = findViewById(R.id.list_paired_devices)
@@ -49,13 +47,22 @@ class DeviceListActivity : AppCompatActivity() {
       listPairedDevices.adapter = adapterPairedDevices
       listAvailableDevices.adapter = adapterAvailableDevices
 
+       listAvailableDevices.onItemClickListener = OnItemClickListener { adapterView, view, i, l ->
+           val info = (view as TextView).text.toString()
+           val address = info.substring(info.length - 17)
+           val intent = Intent()
+           intent.putExtra("deviceAddress", address)
+           setResult(RESULT_OK, intent)
+           finish()
+       }
+
       bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
       val pairedDevices = bluetoothAdapter.bondedDevices
 
       if (pairedDevices != null && pairedDevices.size > 0) {
           for (device in pairedDevices) {
               adapterPairedDevices.add(
-                  """
+                      """
                 ${device.name}
                 ${device.address}
                 """.trimIndent()
@@ -88,9 +95,9 @@ class DeviceListActivity : AppCompatActivity() {
                             Toast.makeText(context, "No new devices found", Toast.LENGTH_SHORT).show()
                         } else{
                             Toast.makeText(
-                                context,
-                                "Click on the device to start the chat",
-                                Toast.LENGTH_SHORT
+                                    context,
+                                    "Click on the device to start the chat",
+                                    Toast.LENGTH_SHORT
                             ).show()
                         }
                     }
@@ -137,6 +144,8 @@ class DeviceListActivity : AppCompatActivity() {
 
 
 }
+
+
 
 
 
