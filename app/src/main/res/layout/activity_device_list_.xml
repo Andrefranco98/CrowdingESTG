@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DeviceListActivity">
+    tools:context=".DeviceListActivity"
+    android:background="#EA6401">
 
     <ProgressBar
         android:id="@+id/progress_scan_devices"
@@ -27,7 +28,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/available_devices"/>
+        android:text="@string/nearby_devices"/>
 
     <ListView
         android:id="@+id/list_available_devices"

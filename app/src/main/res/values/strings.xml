@@ -9,4 +9,8 @@
     <string name="contribute_with_my_location">Contribute with my location</string>
     <string name="example_room">Ex: S2.1</string>
     <string name="search_for_your_desired_location">Search for your desired location</string>
+    <string name="nearby_devices">Nearby Devices</string>
+    <string name="nearby_devices_text"> Enables bluetooth advertising for 5 minutes, nearby devices can see your location.</string>
+    <string name="see_nearby_locations">See Nearby Locations</string>
+    <string name="closer_rssi">The numeric value in a Nearby Device is the RSSI, This indicates how strong is the connection.</string>
 </resources>

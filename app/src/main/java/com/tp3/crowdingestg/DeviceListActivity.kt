@@ -82,12 +82,12 @@ class DeviceListActivity : AppCompatActivity() {
            var action  = intent.action
 
             if(BluetoothDevice.ACTION_FOUND == action){
-
+                val rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI,Short.MIN_VALUE)
              val device = intent.getParcelableExtra<BluetoothDevice>(EXTRA_DEVICE)
                 if (device != null) {
                     if(device.bondState != BluetoothDevice.BOND_BONDED){
                         if (device != null) {
-                            adapterAvailableDevices.add(device.name + "\n" + device.address)
+                            adapterAvailableDevices.add(device.name + "\n" + device.address + "\n" + rssi)
                         }
                     }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED == action){
                         progressScanDevice.visibility= View.GONE
