@@ -42,7 +42,7 @@ private var connectedDevice: String? = null
 
 
 
-ddss
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
