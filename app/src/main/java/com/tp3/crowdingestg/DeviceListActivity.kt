@@ -9,6 +9,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
@@ -123,7 +124,18 @@ class DeviceListActivity : AppCompatActivity() {
                 return true
             }
 
-        }
+                R.id.logout -> {
+                    var token = getSharedPreferences("username", Context.MODE_PRIVATE)
+                    var editor = token.edit()
+                    editor.putString("username_login_atual"," ")        // Iguala valor a vazio, fica sem valor, credenciais soltas
+                    editor.commit()                                     // Atualizar editor
+                    val intent = Intent(this, Login::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                else -> super.onOptionsItemSelected(item)
+            }
         return super.onOptionsItemSelected(item)
     }
 
@@ -141,6 +153,7 @@ class DeviceListActivity : AppCompatActivity() {
 
 
     }
+
 
 
 }

@@ -1,8 +1,12 @@
 package com.tp3.crowdingestg
 
 import android.bluetooth.BluetoothAdapter
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
@@ -50,6 +54,30 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_givelocationactivity, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+
+            R.id.logout -> {
+                var token = getSharedPreferences("username", Context.MODE_PRIVATE)
+                var editor = token.edit()
+                editor.putString("username_login_atual"," ")        // Iguala valor a vazio, fica sem valor, credenciais soltas
+                editor.commit()                                     // Atualizar editor
+                val intent = Intent(this@GiveLocationActivity, Login::class.java)
+                startActivity(intent)
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
+        }
+
+    }
 
 
 }

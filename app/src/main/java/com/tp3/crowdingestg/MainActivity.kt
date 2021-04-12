@@ -109,6 +109,15 @@ class MainActivity : AppCompatActivity() {
                  enableBluetooth()
                  true
              }
+             R.id.logout -> {
+                 var token = getSharedPreferences("username", Context.MODE_PRIVATE)
+                 var editor = token.edit()
+                 editor.putString("username_login_atual"," ")        // Iguala valor a vazio, fica sem valor, credenciais soltas
+                 editor.commit()                                     // Atualizar editor
+                 val intent = Intent(this, Login::class.java)
+                 startActivity(intent)
+                 true
+             }
              else -> super.onOptionsItemSelected(item)
          }
      }

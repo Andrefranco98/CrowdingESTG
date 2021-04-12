@@ -6,4 +6,10 @@
         app:showAsAction="always"
         android:title="@string/scan_devices"
         android:icon="@drawable/ic_baseline_bluetooth_searching_24" />
+
+    <item android:id="@+id/logout"
+        android:icon="@drawable/ic_logout"
+        android:title=""
+        app:showAsAction="always"
+        />
 </menu>

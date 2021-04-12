@@ -15,4 +15,9 @@
         android:title="@string/enable_bluetooth_lbl"
         app:showAsAction="always"/>
 
+    <item android:id="@+id/logout"
+        android:icon="@drawable/ic_logout"
+        android:title=""
+        app:showAsAction="always"
+        />
 </menu>
