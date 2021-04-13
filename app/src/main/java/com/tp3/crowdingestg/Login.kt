@@ -90,4 +90,9 @@ class Login : AppCompatActivity() {
             startActivity(intent)
         }
     }
+
+    fun registar(view: View) {
+        val intent = Intent(this@Login, Registar::class.java)       // ENTRA NA ATIVIDADE
+        startActivity(intent)
+    }
 }
