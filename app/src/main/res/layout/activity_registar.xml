@@ -1,55 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/login"
+    <ImageView
+        android:id="@+id/imageView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="30dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Registar"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/crowdingestg" />
 
     <EditText
         android:id="@+id/user"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:backgroundTint="@color/black"
-        android:hint="Nome"
         android:fontFamily="sans-serif-light"
+        android:hint="Username"
         android:inputType="textAutoComplete"
-        android:textSize="18sp" />
+        android:textColor="#009688"
+        android:textColorHint="#009688"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
 
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/black"
         android:fontFamily="sans-serif-light"
         android:hint="Senha"
         android:inputType="textPassword"
-        android:backgroundTint="@color/black"
-        android:textSize="18sp" />
+        android:textColor="#009688"
+        android:textColorHint="#009688"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user" />
 
     <Button
         android:id="@+id/button_save"
-        android:layout_width="wrap_content"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginLeft="119dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
+        android:layout_marginBottom="340dp"
+        android:background="#009688"
         android:backgroundTint="@color/black"
         android:onClick="addRegistar"
-        android:text="Registar-me"
-        android:textColor="@color/white" />
+        android:text="Register"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:backgroundTint="#009688"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="276dp"
+        android:layout_height="160dp"
+        app:srcCompat="@drawable/ersclogoazul"
+        tools:layout_editor_absoluteX="67dp"
+        tools:layout_editor_absoluteY="542dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

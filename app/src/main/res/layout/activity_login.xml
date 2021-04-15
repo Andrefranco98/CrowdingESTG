@@ -4,45 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=""
     android:padding="20dp">
 
     <EditText
         android:id="@+id/nome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:hint="Login"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="144dp"
+        android:fadeScrollbars="false"
+        android:hint="Username"
+        android:textColor="#009688"
+        android:textColorHighlight="#00BCD4"
+        android:textColorHint="#009688"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/senha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:hint="Password"
         android:inputType="textPassword"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="#009688"
+        android:textColorHint="#009688"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nome"
-        android:layout_marginTop="10dp"
 
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nome" />
 
     <Button
         android:id="@+id/button_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginBottom="35dp"
         android:onClick="login"
-        android:text="Entrar"
-        app:backgroundTint="@color/black"
+        android:text="Login"
+        app:backgroundTint="#009688"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/senha" />
 
@@ -52,26 +60,65 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
+        android:layout_marginBottom="36dp"
         android:onClick="registar"
-        android:text="Registar"
-        app:backgroundTint="@color/black"
+        android:text="Register"
+        app:backgroundTint="#009688"
+        app:layout_constraintBottom_toTopOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_save" />
 
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginLeft="130dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="130dp"
+        android:layout_marginRight="130dp"
+        android:layout_marginBottom="20dp"
+        android:text="Create Account"
+        android:textColor="#009688"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_save" />
+
+    <ImageView
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="Login"
-        android:textColor="@color/black"
-        android:textSize="50dp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_marginStart="27dp"
+        android:layout_marginLeft="27dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:src="@drawable/crowdingestg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="299dp"
+        android:layout_height="145dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginRight="43dp"
+        android:layout_marginBottom="14dp"
+        android:src="@drawable/ersclogoazul"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_update" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
