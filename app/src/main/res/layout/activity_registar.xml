@@ -19,8 +19,8 @@
 
     <EditText
         android:id="@+id/user"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="362dp"
+        android:layout_height="49dp"
         android:backgroundTint="@color/black"
         android:fontFamily="sans-serif-light"
         android:hint="Username"
@@ -36,8 +36,8 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="362dp"
+        android:layout_height="49dp"
         android:layout_marginBottom="30dp"
         android:backgroundTint="@color/black"
         android:fontFamily="sans-serif-light"
@@ -69,7 +69,7 @@
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/password"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
