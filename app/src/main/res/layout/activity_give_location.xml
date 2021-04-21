@@ -20,14 +20,13 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/textroom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.621"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="94dp"
-        android:layout_height="49dp"
+        android:layout_width="243dp"
+        android:layout_height="47dp"
         android:layout_marginStart="152dp"
         android:layout_marginLeft="152dp"
         android:layout_marginEnd="152dp"
@@ -76,6 +75,7 @@
         app:backgroundTint="#090707"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 

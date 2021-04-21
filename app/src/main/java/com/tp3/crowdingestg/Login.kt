@@ -44,7 +44,7 @@ class Login : AppCompatActivity() {
 
 
                         val a: OutputPost = response.body()!!
-                        val intent = Intent(this@Login, GiveLocationActivity::class.java)
+                        val intent = Intent(this@Login, Home::class.java)
                         userid = a.id.toInt()
                         intent.putExtra("userid",userid)
 
@@ -83,7 +83,7 @@ class Login : AppCompatActivity() {
         if(token.getString("username_login_atual"," ") != " ") {
 
 
-            val intent = Intent(this@Login, GiveLocationActivity::class.java)       // ENTRA NA ATIVIDADE
+            val intent = Intent(this@Login, Home::class.java)       // ENTRA NA ATIVIDADE
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
