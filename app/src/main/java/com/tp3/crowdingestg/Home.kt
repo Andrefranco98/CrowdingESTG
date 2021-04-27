@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.view.View
 import android.widget.TextView
 
 class Home : AppCompatActivity() {
@@ -47,4 +48,9 @@ class Home : AppCompatActivity() {
 
     }
 
+    fun give_my_location(view: View) {
+        val intent = Intent(this@Home, GiveLocationActivity::class.java)
+        startActivity(intent)
+        true
+    }
 }
