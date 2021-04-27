@@ -24,20 +24,10 @@ import androidx.core.content.ContextCompat
 
 
 private lateinit var context: Context
-val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
+
 private lateinit var chatUtils: ChatUtils
 
-const val LOCATION_PERMISSION_REQUEST = 101
-const val SELECT_DEVICE = 102
 
-const val MESSAGE_STATE_CHANGED = 0
-const val MESSAGE_READ = 1
-const val MESSAGE_WRITE = 2
-const val MESSAGE_DEVICE_NAME = 3
-const val MESSAGE_TOAST = 4
-
-const val DEVICE_NAME = "deviceName"
-const val TOAST = "toast"
 private var connectedDevice: String? = null
 
 
@@ -192,14 +182,6 @@ class MainActivity : AppCompatActivity() {
 
 
     }
-
-
-
-
-
-
-
-
 
 
 }
