@@ -53,4 +53,10 @@ class Home : AppCompatActivity() {
         startActivity(intent)
         true
     }
+
+    fun nearby_locations(view: View) {
+        val intent = Intent(this@Home, DeviceListActivity::class.java)
+        startActivity(intent)
+        true
+    }
 }
