@@ -22,7 +22,6 @@
         android:textColor="@color/white"
         android:textSize="18sp"
         app:backgroundTint="@color/teal"
-        app:cornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintHorizontal_bias="0.0"

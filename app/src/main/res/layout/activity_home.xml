@@ -28,17 +28,17 @@
         android:layout_marginLeft="56dp"
         android:background="@drawable/button_states"
         android:backgroundTint="@color/black"
+        android:drawableLeft="@drawable/ic_baseline_location_on_24"
+        android:onClick="give_my_location"
         android:text="GIVE MY LOCATION"
         android:textColor="@color/white"
         android:textSize="18sp"
-        android:drawableLeft="@drawable/ic_baseline_location_on_24"
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/password"
-        android:onClick="give_my_location"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.423" />
+        app:layout_constraintVertical_bias="0.388" />
 
     <Button
         android:id="@+id/nearby_location"
@@ -51,10 +51,10 @@
         android:layout_marginRight="120dp"
         android:background="@drawable/button_states"
         android:backgroundTint="@color/black"
-        android:text="Nearby Locations"
         android:drawableLeft="@drawable/ic_baseline_location_searching_24"
-        android:textColor="@color/white"
         android:onClick="nearby_locations"
+        android:text="Nearby Locations"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.4" />
 
     <Button
         android:id="@+id/badges"
@@ -75,8 +75,8 @@
         android:layout_marginRight="120dp"
         android:background="@drawable/button_states"
         android:backgroundTint="@color/black"
-        android:text="BADGES"
         android:drawableLeft="@drawable/ic_baseline_badge_24"
+        android:text="BADGES"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:backgroundTint="#009688"
@@ -85,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.595" />
+        app:layout_constraintVertical_bias="0.541" />
 
     <Button
         android:id="@+id/scoreboards"
@@ -108,7 +108,29 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.681" />
+
+    <Button
+        android:id="@+id/help"
+        android:layout_width="137dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
+        android:background="@drawable/button_states"
+        android:drawableLeft="@drawable/ic_baseline_help_outline_24"
+        android:text="HELP"
+        android:textColor="@color/teal"
+        android:textSize="18sp"
+        app:backgroundTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/password"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
 
     <TextView
         android:id="@+id/Hello"
@@ -120,10 +142,10 @@
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintHorizontal_bias="0.299"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.213" />
+        app:layout_constraintVertical_bias="0.211" />
 
     <TextView
         android:id="@+id/username"
@@ -135,10 +157,10 @@
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.804"
+        app:layout_constraintHorizontal_bias="0.724"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.218" />
+        app:layout_constraintVertical_bias="0.216" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
