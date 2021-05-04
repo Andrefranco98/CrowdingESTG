@@ -20,32 +20,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/image_give_my_location"
-        android:layout_width="31dp"
-        android:layout_height="32dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="62dp"
-        android:layout_marginLeft="62dp"
-        android:layout_marginTop="298dp"
-        android:layout_marginEnd="317dp"
-        android:layout_marginRight="317dp"
-        android:layout_marginBottom="401dp"
-        android:background="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43"
-        tools:srcCompat="@drawable/ic_logout" />
-
-
     <Button
         android:id="@+id/give_my_location"
         android:layout_width="280dp"
@@ -78,6 +52,7 @@
         android:backgroundTint="@color/black"
         android:text="Nearby Locations"
         android:textColor="@color/white"
+        android:onClick="nearby_locations"
         android:textSize="18sp"
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"

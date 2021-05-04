@@ -82,7 +82,6 @@ class Login : AppCompatActivity() {
         var token = getSharedPreferences("username", Context.MODE_PRIVATE)
         if(token.getString("username_login_atual"," ") != " ") {
 
-
             val intent = Intent(this@Login, Home::class.java)       // ENTRA NA ATIVIDADE
 
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

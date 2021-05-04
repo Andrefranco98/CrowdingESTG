@@ -38,7 +38,7 @@ class DeviceListActivity : AppCompatActivity() {
    fun init(){
 
 
-       listPairedDevices = findViewById(R.id.list_paired_devices)
+       //listPairedDevices = findViewById(R.id.list_paired_devices)
        listAvailableDevices = findViewById(R.id.list_available_devices)
        progressScanDevice = findViewById(R.id.progress_scan_devices)
 
@@ -154,6 +154,11 @@ class DeviceListActivity : AppCompatActivity() {
 
     }
 
+    fun back(view: View) {
+
+        val intent = Intent(this@DeviceListActivity, Home::class.java)       // ENTRA NA ATIVIDADE
+        startActivity(intent)
+    }
 
 
 }
