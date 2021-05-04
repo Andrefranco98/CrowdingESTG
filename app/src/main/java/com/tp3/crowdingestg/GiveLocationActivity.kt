@@ -16,41 +16,42 @@ import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.tp3.crowdingestg.R.id.textView5
+import kotlinx.android.synthetic.main.activity_give_location.*
 import java.lang.Compiler.enable
 
 
 lateinit var editTextName: EditText
 lateinit var ButtonClickMe : Button
+lateinit var textView: TextView
+lateinit var textspinner: TextView
 
 
 private lateinit var context: Context
 val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
-private lateinit var chatUtils: ChatUtils
+
 
 const val LOCATION_PERMISSION_REQUEST = 101
 const val SELECT_DEVICE = 102
-
-const val MESSAGE_STATE_CHANGED = 0
-const val MESSAGE_READ = 1
-const val MESSAGE_WRITE = 2
-const val MESSAGE_DEVICE_NAME = 3
-const val MESSAGE_TOAST = 4
 
 const val DEVICE_NAME = "deviceName"
 const val TOAST = "toast"
 private var connectedDevice: String? = null
 
 
-class GiveLocationActivity : AppCompatActivity(), View.OnClickListener {
+class GiveLocationActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_give_location)
 
-        editTextName = findViewById(R.id.textroom)
+
+
+        textspinner = findViewById(R.id.textView)
         ButtonClickMe = findViewById(R.id.button)
-
-
         val spinner: Spinner = findViewById(R.id.spinnersala)
+
+
+
 // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter.createFromResource(
             this,
@@ -61,6 +62,7 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             // Apply the adapter to the spinner
             spinner.adapter = adapter
+            spinner.onItemSelectedListener = this
 
         }
 
@@ -83,7 +85,7 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(view: View) {
-        val newDeviceName = editTextName.text
+        val newDeviceName = textspinner.text
 
         val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         bluetoothAdapter.enable()
@@ -201,6 +203,14 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener {
         }
 
 
+    }
+
+    override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+        val textspinner: String = parent?.getItemAtPosition(position).toString()
+        textView.text = textspinner
+    }
+    override fun onNothingSelected(parent: AdapterView<*>?) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 
