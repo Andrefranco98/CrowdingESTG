@@ -13,4 +13,29 @@
     <string name="nearby_devices_text"> Enables bluetooth advertising for 5 minutes, nearby devices can see your location.</string>
     <string name="see_nearby_locations">See Nearby Locations</string>
     <string name="closer_rssi">The numeric value in a Nearby Device is the RSSI, This indicates how strong is the connection.</string>
+
+<string-array name="salas_array">
+    <item>Auditório</item>
+    <item>Bar</item>
+    <item>Cantina</item>
+    <item>Reprografia</item>
+    <item>Secretaria</item>
+    <item>S1.1</item>
+    <item>S1.2</item>
+    <item>S1.3</item>
+    <item>S1.4</item>
+    <item>S1.5</item>
+    <item>S1.6</item>
+    <item>L1.7</item>
+    <item>L1.8</item>
+    <item>S2.1</item>
+    <item>S2.2</item>
+    <item>S2.3</item>
+    <item>S2.4</item>
+    <item>S2.5</item>
+    <item>S2.6</item>
+    <item>L2.7</item>
+    <item>L2.8</item>
+
+</string-array>
 </resources>
