@@ -103,12 +103,19 @@
 
     <Spinner
         android:id="@+id/spinnersala"
-
-        android:layout_width="406dp"
-        android:layout_height="67dp"
-        android:layout_marginTop="84dp"
+        android:prompt="@string/titlespinner"
+        android:spinnerMode="dropdown"
+        android:layout_width="216dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginRight="99dp"
         android:background="#009688"
-        app:layout_constraintTop_toBottomOf="@+id/textroom"
-        tools:layout_editor_absoluteX="5dp" />
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textroom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
