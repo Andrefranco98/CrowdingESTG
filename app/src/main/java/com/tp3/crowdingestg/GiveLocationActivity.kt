@@ -101,13 +101,20 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.menu_givelocationactivity, menu)
+        inflater.inflate(R.menu.menu_main_activity, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle item selection
         return when (item.itemId) {
+
+            R.id.menu_search_devices -> {
+                checkPermissions()
+                Toast.makeText(applicationContext, "Searching devices", Toast.LENGTH_SHORT).show()
+
+                true
+            }
 
             R.id.logout -> {
                 var token = getSharedPreferences("username", Context.MODE_PRIVATE)
