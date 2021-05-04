@@ -95,10 +95,7 @@ class MainActivity : AppCompatActivity() {
 
                  true
              }
-             R.id.menu_enable_bluetooth -> {
-                 enableBluetooth()
-                 true
-             }
+
              R.id.logout -> {
                  var token = getSharedPreferences("username", Context.MODE_PRIVATE)
                  var editor = token.edit()
