@@ -45,7 +45,7 @@ class DeviceListActivity : AppCompatActivity() {
       adapterPairedDevices =  ArrayAdapter<String>(this, R.layout.device_list_item)
       adapterAvailableDevices =  ArrayAdapter<String>(this, R.layout.device_list_item)
 
-      listPairedDevices.adapter = adapterPairedDevices
+//      listPairedDevices.adapter = adapterPairedDevices
       listAvailableDevices.adapter = adapterAvailableDevices
 
        listAvailableDevices.onItemClickListener = OnItemClickListener { adapterView, view, i, l ->

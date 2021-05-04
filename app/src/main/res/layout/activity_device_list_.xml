@@ -5,15 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".DeviceListActivity"
->
+    tools:context=".DeviceListActivity">
 
     <ImageView
         android:id="@+id/imageView5"
         android:layout_width="277dp"
         android:layout_height="48dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="27dp"
         android:layout_marginRight="27dp"
@@ -34,11 +33,12 @@
         android:layout_width="248dp"
         android:layout_height="59dp"
         android:layout_marginLeft="80dp"
-
+        android:textAlignment="center"
         android:layout_marginTop="20dp"
         android:text="Locations Received by Bluetooth"
         android:textColor="#009688"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:gravity="center_horizontal" />
 
     <ListView
         android:id="@+id/list_available_devices"
@@ -51,9 +51,11 @@
         android:layout_width="198dp"
         android:layout_height="50dp"
         android:layout_marginLeft="110dp"
+        android:background="@drawable/button_states"
         android:layout_marginRight="120dp"
-        android:background="#009688"
+
         android:backgroundTint="@color/black"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
         android:onClick="back"
         android:text="BACK"
         android:textColor="@color/white"
