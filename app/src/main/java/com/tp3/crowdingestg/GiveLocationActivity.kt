@@ -150,10 +150,6 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener, AdapterV
                     arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION),
                     LOCATION_PERMISSION_REQUEST
             )
-        } else {
-            val intent = Intent(this, DeviceListActivity::class.java).apply { }
-            startActivityForResult(intent, SELECT_DEVICE)
-
         }
 
     }

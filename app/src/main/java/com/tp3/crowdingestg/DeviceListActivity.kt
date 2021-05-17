@@ -1,5 +1,6 @@
 package com.tp3.crowdingestg
 
+import android.Manifest
 import android.bluetooth.BluetoothAdapter
 import android.bluetooth.BluetoothDevice
 import android.bluetooth.BluetoothDevice.EXTRA_DEVICE
@@ -7,6 +8,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -15,6 +17,8 @@ import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 
 
 class DeviceListActivity : AppCompatActivity() {
@@ -118,6 +122,28 @@ class DeviceListActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
+            R.id.menu_bluetooth_enable -> {
+                if (bluetoothAdapter != null) {
+                    if (bluetoothAdapter.isEnabled){
+                        bluetoothAdapter.enable()
+                    }
+                    if(bluetoothAdapter.scanMode !=  BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE){
+                        val discoveryIntent = Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE)
+                        discoveryIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300)
+                        startActivity(discoveryIntent)
+                    }
+
+                }
+                true
+            }
+
+            R.id.menu_search_devices -> {
+                checkPermissions()
+                Toast.makeText(applicationContext, "Searching devices", Toast.LENGTH_SHORT).show()
+
+                true
+            }
+
             R.id.menu_scan_devices -> {
                 scanDevices()
                 Toast.makeText(this, "Scan started", Toast.LENGTH_SHORT).show()
@@ -151,6 +177,22 @@ class DeviceListActivity : AppCompatActivity() {
 
         bluetoothAdapter.startDiscovery()
 
+
+    }
+
+    private fun checkPermissions() {
+        if (ContextCompat.checkSelfPermission(
+                applicationContext,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+
+            ActivityCompat.requestPermissions(
+                this@DeviceListActivity,
+                arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION),
+                LOCATION_PERMISSION_REQUEST
+            )
+        }
 
     }
 
