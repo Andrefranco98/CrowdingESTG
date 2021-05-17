@@ -51,7 +51,7 @@
         android:layout_marginRight="120dp"
         android:background="@drawable/button_states"
         android:backgroundTint="@color/black"
-        android:drawableLeft="@drawable/ic_baseline_location_searching_24"
+        android:drawableLeft="@drawable/ic_baseline_connect_without_contact_24"
         android:onClick="nearby_locations"
         android:text="Nearby Locations"
         android:textColor="@color/white"

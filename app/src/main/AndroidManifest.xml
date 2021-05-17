@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CrowdingESTG">
-        <activity android:name=".Home"></activity>
+        <activity android:name=".Scoreboard"></activity>
+        <activity android:name=".Home" />
         <activity android:name=".Registar" />
         <activity android:name=".Login">
             <intent-filter>
