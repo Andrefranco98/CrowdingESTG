@@ -1,65 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".DeviceListActivity">
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="297dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:src="@drawable/crowdingestg"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="416dp"
+        android:layout_height="562dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.769"
+        tools:listitem="@layout/recyclerline" />
 
-    <ProgressBar
-        android:id="@+id/progress_scan_devices"
-        android:layout_gravity="center"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:visibility="gone"/>
-
-
-    <TextView
-        android:layout_width="280dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="0dp"
-        android:gravity="center_horizontal"
-        android:text="Scoreboard"
-        android:textAlignment="center"
-        android:textColor="#009688"
-        android:textSize="50dp" />
-
-    <ListView
-        android:id="@+id/list_available_devices"
-        android:layout_width="match_parent"
-        android:layout_height="469dp"
-        android:layout_marginBottom="20dp" />
-
-    <Button
-        android:id="@+id/scoreboards"
-        android:layout_width="198dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="110dp"
-        android:background="@drawable/button_states"
-        android:layout_marginRight="120dp"
-
-        android:backgroundTint="@color/black"
-        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
-        android:onClick="back"
-        android:text="BACK"
-        android:textColor="@color/white"
-        android:textSize="18sp"
-        app:backgroundTint="#009688" />
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
