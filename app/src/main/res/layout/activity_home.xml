@@ -51,7 +51,7 @@
         android:layout_marginRight="120dp"
         android:background="@drawable/button_states"
         android:backgroundTint="@color/black"
-        android:drawableLeft="@drawable/ic_baseline_location_searching_24"
+        android:drawableLeft="@drawable/ic_baseline_connect_without_contact_24"
         android:onClick="nearby_locations"
         android:text="Nearby Locations"
         android:textColor="@color/white"
@@ -142,7 +142,7 @@
         android:textSize="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.299"
+        app:layout_constraintHorizontal_bias="0.32"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.211" />
