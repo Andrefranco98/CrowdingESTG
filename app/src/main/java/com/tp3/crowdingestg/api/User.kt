@@ -1,9 +1,8 @@
 package com.tp3.crowdingestg.api
 
-data class problemas(
+data class scoreboard(
     val id: Int,
-    val descr: String,
-    val latitude: String,
-    val longitude: String,
-    val user_id: Int
+    val name: String,
+    val password: String,
+    val pontos: Int
 )
