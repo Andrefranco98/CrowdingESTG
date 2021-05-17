@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
@@ -102,7 +103,7 @@ class DeviceListActivity : AppCompatActivity() {
                     if(device.bondState != BluetoothDevice.BOND_BONDED){
                         if (device != null) {
                             when (rssi){
-                                in -70..0 -> rssitexto = "Close"
+                                in -70..0 -> rssitexto =  "Close"
                                 in -90..-71 -> rssitexto = "Kinda close"
                                 else -> rssitexto = "Far"
                             }
