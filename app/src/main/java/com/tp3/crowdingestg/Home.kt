@@ -59,4 +59,10 @@ class Home : AppCompatActivity() {
         startActivity(intent)
         true
     }
+
+    fun help(view: View) {
+        val intent = Intent(this@Home, MainActivity::class.java)
+        startActivity(intent)
+        true
+    }
 }
