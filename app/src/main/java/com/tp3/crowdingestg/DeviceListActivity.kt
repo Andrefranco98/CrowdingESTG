@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -14,7 +15,11 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import android.widget.AdapterView.OnItemClickListener
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 
 class DeviceListActivity : AppCompatActivity() {
@@ -79,16 +84,29 @@ class DeviceListActivity : AppCompatActivity() {
           }
 
     private val bluetoothDeviceListener = object : BroadcastReceiver() {
+        @RequiresApi(Build.VERSION_CODES.O)
         override fun onReceive(context: Context, intent: Intent) {
            var action  = intent.action
 
             if(BluetoothDevice.ACTION_FOUND == action){
+                val currentDateTime = LocalDateTime.now()
                 val rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI,Short.MIN_VALUE)
+
+                var rssitexto = String()
+
+
+
+
              val device = intent.getParcelableExtra<BluetoothDevice>(EXTRA_DEVICE)
                 if (device != null) {
                     if(device.bondState != BluetoothDevice.BOND_BONDED){
                         if (device != null) {
-                            adapterAvailableDevices.add(device.name + "\n" + device.address + "\n" + rssi)
+                            when (rssi){
+                                in -70..0 -> rssitexto = "Close"
+                                in -90..-71 -> rssitexto = "Kinda close"
+                                else -> rssitexto = "Far"
+                            }
+                            adapterAvailableDevices.add(device.name  + "\t" + (currentDateTime.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)))     +     "\t" +       /*device.address*/ "\t"  + rssitexto)
                         }
                     }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED == action){
                         progressScanDevice.visibility= View.GONE
