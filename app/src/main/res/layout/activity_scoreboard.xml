@@ -22,13 +22,15 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="212dp"
-        android:layout_height="46dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:layout_marginTop="100dp"
+        android:drawableTint="@color/teal"
+        android:drawableRight="@drawable/scoreboard_logo"
         android:text="Scoreboard"
         android:textColor="@color/teal"
-        android:textStyle="bold"
         android:textSize="40dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/button_update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
