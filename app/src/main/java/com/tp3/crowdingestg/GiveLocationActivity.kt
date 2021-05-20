@@ -17,7 +17,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.tp3.crowdingestg.R.id.textView5
+import com.tp3.crowdingestg.api.EndPoints
+import com.tp3.crowdingestg.api.OutputPost
+import com.tp3.crowdingestg.api.ServiceBuilder
 import kotlinx.android.synthetic.main.activity_give_location.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.lang.Compiler.enable
 
 
@@ -38,12 +44,13 @@ const val DEVICE_NAME = "deviceName"
 const val TOAST = "toast"
 private var connectedDevice: String? = null
 
-
+private var userid : Int = 0
 class GiveLocationActivity : AppCompatActivity(), View.OnClickListener, AdapterView.OnItemSelectedListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_give_location)
-
+        var token = getSharedPreferences("id", Context.MODE_PRIVATE)
+        userid = token.getInt("id_login_atual",0)
 
 
         textspinner = findViewById(R.id.textView)
@@ -85,6 +92,8 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener, AdapterV
     }
 
     override fun onClick(view: View) {
+
+
         val newDeviceName = textspinner.text
 
         val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -94,10 +103,32 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener, AdapterV
         }
 
 
-        Toast.makeText(applicationContext, "You are on $newDeviceName", Toast.LENGTH_SHORT).show()
+       // Toast.makeText(applicationContext, "You are on $newDeviceName", Toast.LENGTH_SHORT).show()
 
         val intent = Intent(this, DeviceListActivity::class.java)
         startActivity(intent)
+
+        val request = ServiceBuilder.buildService(EndPoints::class.java)     // crio o request
+        val call = request.rewarduser_location(userid)     // id para acrescentar os pontos
+
+        call.enqueue(object : Callback<OutputPost> {
+
+            override fun onResponse(call: Call<OutputPost>, response: Response<OutputPost>) {
+
+                if (response.isSuccessful) {
+                    if (response.body()?.status == false) {
+                        val c: OutputPost = response.body()!!
+                        Toast.makeText(this@GiveLocationActivity, "Erro...", Toast.LENGTH_SHORT).show()
+                    }else{
+                        val a: OutputPost = response.body()!!
+                        Toast.makeText(this@GiveLocationActivity, "Você ganhou 1 Ponto... Parabéns!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+            override fun onFailure(call: Call<OutputPost>, t: Throwable) {
+                Toast.makeText(this@GiveLocationActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
 
     }
 

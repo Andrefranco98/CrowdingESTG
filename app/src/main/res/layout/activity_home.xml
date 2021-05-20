@@ -102,6 +102,7 @@
         android:text="SCOREBOARDS"
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:onClick="scoreboard"
         app:backgroundTint="#009688"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/password"

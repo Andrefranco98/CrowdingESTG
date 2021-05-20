@@ -65,4 +65,10 @@ class Home : AppCompatActivity() {
         startActivity(intent)
         true
     }
+
+    fun scoreboard(view: View) {
+        val intent = Intent(this@Home, Scoreboard::class.java)
+        startActivity(intent)
+        true
+    }
 }
