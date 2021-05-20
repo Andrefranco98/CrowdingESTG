@@ -107,7 +107,7 @@ class DeviceListActivity : AppCompatActivity() {
                                 in -90..-71 -> rssitexto = "Kinda close"
                                 else -> rssitexto = "Far"
                             }
-                            adapterAvailableDevices.add(device.name  + "\t" + (currentDateTime.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)))     +     "\t" +       /*device.address*/ "\t"  + rssitexto)
+                            adapterAvailableDevices.add(device.name  + "\n" + (currentDateTime.format(DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT)))     +     "\t" +       /*device.address*/ "\t"  + rssitexto)
                         }
                     }else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED == action){
                         progressScanDevice.visibility= View.GONE
