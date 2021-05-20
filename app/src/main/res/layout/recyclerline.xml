@@ -4,36 +4,51 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
+<TextView
+    android:id="@+id/posicao"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_marginLeft="400dp"
+    android:textColor="@color/teal"
+    android:textStyle="bold"
+    android:textSize="17dp"
+    android:text="1º"
+    ></TextView>
+
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/Name"
+        android:text="Marco"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:textColor="@color/teal"
+        android:layout_alignTop="@+id/posicao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="185dp"
-        android:layout_marginLeft="185dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="186dp"
-        android:layout_marginRight="186dp"
-        android:layout_marginBottom="10dp"
-        android:background="@android:color/black"
-        android:text="NOME"
-        android:textColor="@color/white"
-        android:textStyle="bold"></TextView>
+        android:textSize="17dp"
+        ></TextView>
 
     <TextView
         android:id="@+id/pontos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/name"
-        android:layout_alignLeft="@+id/name"
-        android:layout_alignParentEnd="true"
+        android:text="23"
+        android:layout_alignTop="@id/posicao"
+        android:textColor="@color/teal"
+        android:textSize="17dp"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="172dp"
-        android:layout_marginRight="172dp"
-        android:text="PONTOS"></TextView>
+        android:layout_marginRight="120dp"
+        ></TextView>
 
-
+    <TextView
+        android:id="@+id/contribuicoes"
+        android:layout_width="wrap_content"
+        android:textColor="@color/teal"
+        android:layout_height="wrap_content"
+        android:text="Contribuições"
+        android:layout_alignTop="@id/posicao"
+        android:textSize="17dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        ></TextView>
 </RelativeLayout>
