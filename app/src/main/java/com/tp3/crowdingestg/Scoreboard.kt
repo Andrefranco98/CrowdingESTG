@@ -7,29 +7,51 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tp3.crowdingestg.adapters.LineAdapter
+import com.tp3.crowdingestg.api.EndPoints
+import com.tp3.crowdingestg.api.OutputPost
+import com.tp3.crowdingestg.api.ServiceBuilder
+import com.tp3.crowdingestg.api.scoreboard
 import com.tp3.crowdingestg.dataclasses.Place
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_scoreboard.*
+import kotlinx.android.synthetic.main.recyclerline.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Scoreboard : AppCompatActivity() {
-
     private lateinit var myList: ArrayList<Place>
+    private var userpontos : Int = 0
+    private lateinit var username : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scoreboard)
 
-    //    val request = ServiceBuilder.buildService(EndPoints::class.java)
-      //  val call = request.getscoreaboard()
+        val request = ServiceBuilder.buildService(EndPoints::class.java)     // crio o request
+        val call = request.getscoreaboard()
 
-        myList = ArrayList<Place>()
+        call.enqueue(object : Callback<List<scoreboard>> {
 
-        for (i in 1 until 500) {
-            myList.add(Place("$i º", "Marco", 500-(i*20), "Contribuições"))
-        }
-        recyclerview.adapter = LineAdapter(myList)
-        recyclerview.layoutManager = LinearLayoutManager(this)
+            override fun onResponse(call: Call<List<scoreboard>>, response: Response<List<scoreboard>>) {
+
+                if (response.isSuccessful) {
+                        myList = ArrayList<Place>()
+
+                        for (i in 1 until 500) {
+                            myList.add(Place("$i º", "teste", 500-(i*20), "Contribuições"))
+                        }
+                        recyclerview.adapter = LineAdapter(myList)
+                        recyclerview.layoutManager = LinearLayoutManager(this@Scoreboard)
+                }
+            }
+            override fun onFailure(call: Call<List<scoreboard>>, t: Throwable) {
+                Toast.makeText(this@Scoreboard, "ERRO", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

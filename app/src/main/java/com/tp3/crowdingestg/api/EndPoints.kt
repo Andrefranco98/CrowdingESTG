@@ -5,6 +5,7 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface EndPoints {
+
     @GET("/myslim/api/scoreboard")
     fun getscoreaboard(): Call<List<scoreboard>>
 
