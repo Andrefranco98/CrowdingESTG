@@ -21,6 +21,7 @@ import com.tp3.crowdingestg.api.EndPoints
 import com.tp3.crowdingestg.api.OutputPost
 import com.tp3.crowdingestg.api.ServiceBuilder
 import kotlinx.android.synthetic.main.activity_give_location.*
+import kotlinx.android.synthetic.main.activity_scoreboard.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -121,6 +122,7 @@ class GiveLocationActivity : AppCompatActivity(), View.OnClickListener, AdapterV
                         Toast.makeText(this@GiveLocationActivity, "Erro...", Toast.LENGTH_SHORT).show()
                     }else{
                         val a: OutputPost = response.body()!!
+                        recyclerview.adapter?.notifyDataSetChanged()
                         Toast.makeText(this@GiveLocationActivity, "Você ganhou 1 Ponto... Parabéns!", Toast.LENGTH_SHORT).show()
                     }
                 }

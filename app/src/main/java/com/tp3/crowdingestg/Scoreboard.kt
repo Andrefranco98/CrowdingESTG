@@ -24,7 +24,9 @@ import retrofit2.Response
 
 class Scoreboard : AppCompatActivity() {
     private lateinit var myList: ArrayList<Place>
+    private lateinit var scoreboard2: List<scoreboard>
     private var userpontos : Int = 0
+    private var posicao : Int = 1
     private lateinit var username : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,17 +37,16 @@ class Scoreboard : AppCompatActivity() {
         val call = request.getscoreaboard()
 
         call.enqueue(object : Callback<List<scoreboard>> {
-
             override fun onResponse(call: Call<List<scoreboard>>, response: Response<List<scoreboard>>) {
-
                 if (response.isSuccessful) {
-                        myList = ArrayList<Place>()
-
-                        for (i in 1 until 500) {
-                            myList.add(Place("$i º", "teste", 500-(i*20), "Contribuições"))
-                        }
-                        recyclerview.adapter = LineAdapter(myList)
-                        recyclerview.layoutManager = LinearLayoutManager(this@Scoreboard)
+                    scoreboard2 = response.body()!!
+                    myList = ArrayList<Place>()
+                    for (tabela in scoreboard2){
+                        myList.add(Place("$posicao º", tabela.name, tabela.pontos, "Contribuições"))
+                        posicao += 1
+                    }
+                    recyclerview.adapter = LineAdapter(myList)
+                    recyclerview.layoutManager = LinearLayoutManager(this@Scoreboard)
                 }
             }
             override fun onFailure(call: Call<List<scoreboard>>, t: Throwable) {
